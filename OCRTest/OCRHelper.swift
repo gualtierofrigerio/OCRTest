@@ -11,6 +11,9 @@ import Vision
 
 typealias OCRHelperCallback = (Bool, [String]?) -> Void
 
+/// Helper struct for OCRHelper
+/// containing the CGImage to process and the callback to call
+/// once the OCR is done
 fileprivate struct OCRHelperRequest {
     var image:CGImage
     var callback:OCRHelperCallback
@@ -18,6 +21,9 @@ fileprivate struct OCRHelperRequest {
 
 /// Helper class to get text from an image using Vision framework
 class OCRHelper {
+    init(fastRecognition:Bool) {
+        self.useFastRecognition = fastRecognition
+    }
     /// Get an array of strings from a UIImage
     /// - Parameters:
     ///   - image: The UIImage to scan for text
@@ -34,6 +40,7 @@ class OCRHelper {
     // MARK: - Private
     
     private var pendingOCRRequests:[OCRHelperRequest] = []
+    private var useFastRecognition = false
     
     private func addRequest(withImage image:CGImage, callback:@escaping OCRHelperCallback) {
         let request = OCRHelperRequest(image: image, callback: callback)
@@ -46,6 +53,7 @@ class OCRHelper {
     private func processOCRRequest(_ request:OCRHelperRequest) {
         let requestHandler = VNImageRequestHandler(cgImage: request.image)
         let visionRequest = VNRecognizeTextRequest(completionHandler: recognizeTextHandler)
+        visionRequest.recognitionLevel = useFastRecognition ? .fast : .accurate
         do {
             try requestHandler.perform([visionRequest])
         } catch {
