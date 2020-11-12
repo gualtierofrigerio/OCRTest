@@ -12,13 +12,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if let image = UIImage(named: "ocrtest") {
-            performOCR(onImage: image)
+        let images = ["ocrtest", "lorem", "loremwikipedia"]
+        for imageName in images {
+            if let image = UIImage(named: imageName) {
+                performOCR(onImage: image)
+            }
         }
     }
     
     func performOCR(onImage image:UIImage) {
-        let helper = OCRHelper()
+        let helper = OCRHelper(fastRecognition: false)
         helper.getTextFromImage(image) { success, strings in
             print("success \(success) strings \(String(describing: strings))")
         }
