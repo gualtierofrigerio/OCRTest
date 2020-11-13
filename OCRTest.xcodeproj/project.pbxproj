@@ -15,7 +15,7 @@
 		251C824B25585293009486DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251C824925585293009486DF /* LaunchScreen.storyboard */; };
 		251C8255255852C8009486DF /* OCRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C8254255852C8009486DF /* OCRHelper.swift */; };
 		25BD2523255D939B00AC42FC /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2522255D939B00AC42FC /* OCRViewController.swift */; };
-		25BD2526255D9C6C00AC42FC /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2525255D9C6C00AC42FC /* ImageCaptureManager.swift */; };
+		25BD2526255D9C6C00AC42FC /* ImageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2525255D9C6C00AC42FC /* ImageCaptureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		251C824C25585293009486DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		251C8254255852C8009486DF /* OCRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRHelper.swift; sourceTree = "<group>"; };
 		25BD2522255D939B00AC42FC /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
-		25BD2525255D9C6C00AC42FC /* ImageCaptureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
+		25BD2525255D9C6C00AC42FC /* ImageCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				251C823E25585292009486DF /* AppDelegate.swift */,
-				25BD2525255D9C6C00AC42FC /* ImageCaptureManager.swift */,
+				25BD2525255D9C6C00AC42FC /* ImageCaptureViewController.swift */,
 				251C8254255852C8009486DF /* OCRHelper.swift */,
 				25BD2522255D939B00AC42FC /* OCRViewController.swift */,
 				251C824025585292009486DF /* SceneDelegate.swift */,
@@ -150,7 +150,7 @@
 				251C823F25585292009486DF /* AppDelegate.swift in Sources */,
 				251C8255255852C8009486DF /* OCRHelper.swift in Sources */,
 				25BD2523255D939B00AC42FC /* OCRViewController.swift in Sources */,
-				25BD2526255D9C6C00AC42FC /* ImageCaptureManager.swift in Sources */,
+				25BD2526255D9C6C00AC42FC /* ImageCaptureViewController.swift in Sources */,
 				251C824125585292009486DF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V4J7VM9P5;
 				INFOPLIST_FILE = OCRTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,6 +319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V4J7VM9P5;
 				INFOPLIST_FILE = OCRTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
