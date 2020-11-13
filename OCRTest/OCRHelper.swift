@@ -37,6 +37,15 @@ class OCRHelper {
         addRequest(withImage: cgImage, callback: callback)
     }
     
+    /// Get an array of strings from a CGImage
+    /// - Parameters:
+    ///   - image: The CGImage to scan for text
+    ///   - callback: the callback with a bool parameter indicating success
+    ///                 and an optional array of string recognized in the image
+    func getTextFromImage(_ image:CGImage, callback:@escaping OCRHelperCallback) {
+        addRequest(withImage: image, callback: callback)
+    }
+    
     // MARK: - Private
     
     private var pendingOCRRequests:[OCRHelperRequest] = []
