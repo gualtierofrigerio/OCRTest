@@ -17,33 +17,41 @@ class OCRViewController: UIViewController {
         captureVC.startCapture()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.view.addSubview(imageView)
-        var frame = self.view.frame
-        frame.origin.y = frame.size.height / 2
-        frame.size.height = frame.size.height / 2
-        frame.size.width = frame.size.width / 2
-        imageView.frame = frame
-        imageView.backgroundColor = .green
-        view.bringSubviewToFront(imageView)
+    private var ocrHelper = OCRHelper(fastRecognition: true)
+    private var statusBarOrientation:UIInterfaceOrientation? {
+        UIApplication.shared.windows.first?.windowScene?.interfaceOrientation
     }
     
-    private var imageView = UIImageView()
-    private var ocrHelper = OCRHelper(fastRecognition: true)
+    /// Returns the image property orientation based on the current interface orientation
+    /// this is necessary because the CGImage orientation has to be adjusted
+    /// based on current interface orientation
+    /// so we get a CGImage and we know the current orientation of the device
+    /// and we have to use this adjusted orientation for the OCR
+    /// - Returns: The CGImagePropertyOrientation for the image
+    private func getCurrentOrientation() -> CGImagePropertyOrientation? {
+        var returnOrientation:CGImagePropertyOrientation? = nil
+        if let orientation = statusBarOrientation {
+            switch orientation {
+            case .portrait:
+                returnOrientation = CGImagePropertyOrientation.right
+            case .landscapeLeft:
+                returnOrientation = CGImagePropertyOrientation.down
+            case .landscapeRight:
+                returnOrientation = CGImagePropertyOrientation.up
+            case .portraitUpsideDown:
+                returnOrientation = CGImagePropertyOrientation.left
+            default:
+                returnOrientation = nil
+            }
+        }
+        return returnOrientation
+    }
 }
 
 extension OCRViewController: ImageCaptureViewControllerDelegate {
     func imageCaptured(image: CGImage) {
-        print("image captured")
-        //imageView.image = UIImage(cgImage: image)
-        if let data = imageView.image?.jpegData(compressionQuality: 0.9) {
-            let paths = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
-            let libraryDirectoryPath = paths[0]
-            let imagePath = libraryDirectoryPath.appendingPathComponent("/test.jpg")
-            try? data.write(to: imagePath)
-        }
-        ocrHelper.getTextFromImage(image) { success, strings in
+        let orientation = getCurrentOrientation()
+        ocrHelper.getTextFromImage(image, orientation:orientation) { success, strings in
             if let strings = strings {
                 print(strings)
             }
