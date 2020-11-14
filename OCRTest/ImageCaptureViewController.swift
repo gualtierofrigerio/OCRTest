@@ -96,16 +96,9 @@ extension ImageCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelega
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
-        print("captureOutput didOutput")
         guard let image = getImageFromSampleBuffer(sampleBuffer) else {
             return
         }
         delegate.imageCaptured(image: image)
-    }
-    
-    func captureOutput(_ output: AVCaptureOutput,
-                       didDrop sampleBuffer: CMSampleBuffer,
-                       from connection: AVCaptureConnection) {
-        print("captureOutput didDrop")
     }
 }
