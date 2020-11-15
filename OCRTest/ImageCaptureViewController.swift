@@ -8,10 +8,15 @@
 import AVFoundation
 import UIKit
 
+
+/// Protocol to implement in order to get notified about
+/// images captured by the ImageCaptureViewController
 protocol ImageCaptureViewControllerDelegate {
     func imageCaptured(image: CGImage)
 }
 
+/// ViewController responsible for capturing video via AVCaptureSession
+/// The view controller has a preview layer to show the camera output
 class ImageCaptureViewController: UIViewController {
     init(withDelegate delegate:ImageCaptureViewControllerDelegate) {
         self.delegate = delegate
@@ -31,10 +36,12 @@ class ImageCaptureViewController: UIViewController {
         configurePreview()
     }
     
+    /// Start the AVCaptureSession
     func startCapture() {
         captureSession?.startRunning()
     }
     
+    /// Stops the AVCaptureSession
     func stopCapture() {
        captureSession?.stopRunning()
     }
@@ -45,6 +52,8 @@ class ImageCaptureViewController: UIViewController {
     private var captureSession:AVCaptureSession?
     private var delegate:ImageCaptureViewControllerDelegate
     
+    /// Perform the initial configuration instantiating the AVCaptureDevice
+    /// and reating the AVCaptureSession
     private func configureSession() {
         guard let device = AVCaptureDevice.default(.builtInWideAngleCamera,
                                                    for: .video,
@@ -62,6 +71,8 @@ class ImageCaptureViewController: UIViewController {
         self.captureSession = session
     }
     
+    /// Configure the preview layer
+    /// the layer is added to the cameraView
     private func configurePreview() {
         guard let session = captureSession else {return}
         let previewLayer = AVCaptureVideoPreviewLayer(session: session)
@@ -70,6 +81,9 @@ class ImageCaptureViewController: UIViewController {
         cameraView.layer.addSublayer(previewLayer)
     }
     
+    /// Returns if possible a CGImage from a CMSampleBuffer
+    /// - Parameter sampleBuffer: The CMSampleBuffer to convert to an image
+    /// - Returns: The optional CGImage
     private func getImageFromSampleBuffer(_ sampleBuffer:CMSampleBuffer) -> CGImage? {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
             return nil
@@ -91,6 +105,8 @@ class ImageCaptureViewController: UIViewController {
         return cgImage
     }
 }
+
+// MARK: - AVCapture delegate
 
 extension ImageCaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput,
