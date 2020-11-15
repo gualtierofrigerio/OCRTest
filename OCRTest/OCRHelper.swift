@@ -22,6 +22,8 @@ fileprivate struct OCRHelperRequest {
 
 /// Helper class to get text from an image using Vision framework
 class OCRHelper {
+    var useFastRecognition = false
+    
     init(fastRecognition:Bool) {
         self.useFastRecognition = fastRecognition
     }
@@ -54,7 +56,6 @@ class OCRHelper {
     // MARK: - Private
     
     private var pendingOCRRequests:[OCRHelperRequest] = []
-    private var useFastRecognition = false
     
     /// Add a request for OCR
     /// - Parameters:
