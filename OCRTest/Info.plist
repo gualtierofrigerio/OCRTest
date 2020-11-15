@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>perform OCR</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access photo library to perform OCR</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
