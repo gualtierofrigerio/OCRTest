@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,8 @@
 		251C824625585292009486DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251C824425585292009486DF /* Main.storyboard */; };
 		251C824825585293009486DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 251C824725585293009486DF /* Assets.xcassets */; };
 		251C824B25585293009486DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 251C824925585293009486DF /* LaunchScreen.storyboard */; };
-		251C8255255852C8009486DF /* OCRHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251C8254255852C8009486DF /* OCRHelper.swift */; };
-		25BD2523255D939B00AC42FC /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2522255D939B00AC42FC /* OCRViewController.swift */; };
-		25BD2526255D9C6C00AC42FC /* ImageCaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD2525255D9C6C00AC42FC /* ImageCaptureViewController.swift */; };
+		256DAF842567BAF9002D87E3 /* ViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DAF832567BAF9002D87E3 /* ViewController10.swift */; };
+		2574636C256972F000468377 /* GFLiveScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 2574636B256972F000468377 /* GFLiveScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +26,7 @@
 		251C824725585293009486DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		251C824A25585293009486DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		251C824C25585293009486DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		251C8254255852C8009486DF /* OCRHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRHelper.swift; sourceTree = "<group>"; };
-		25BD2522255D939B00AC42FC /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
-		25BD2525255D9C6C00AC42FC /* ImageCaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureViewController.swift; sourceTree = "<group>"; };
+		256DAF832567BAF9002D87E3 /* ViewController10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController10.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2574636C256972F000468377 /* GFLiveScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,11 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				251C823E25585292009486DF /* AppDelegate.swift */,
-				25BD2525255D9C6C00AC42FC /* ImageCaptureViewController.swift */,
-				251C8254255852C8009486DF /* OCRHelper.swift */,
-				25BD2522255D939B00AC42FC /* OCRViewController.swift */,
 				251C824025585292009486DF /* SceneDelegate.swift */,
 				251C824225585292009486DF /* ViewController.swift */,
+				256DAF832567BAF9002D87E3 /* ViewController10.swift */,
 				251C824425585292009486DF /* Main.storyboard */,
 				251C824725585293009486DF /* Assets.xcassets */,
 				251C824925585293009486DF /* LaunchScreen.storyboard */,
@@ -92,6 +88,9 @@
 			dependencies = (
 			);
 			name = OCRTest;
+			packageProductDependencies = (
+				2574636B256972F000468377 /* GFLiveScanner */,
+			);
 			productName = OCRTest;
 			productReference = 251C823B25585292009486DF /* OCRTest.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +118,9 @@
 				Base,
 			);
 			mainGroup = 251C823225585291009486DF;
+			packageReferences = (
+				2574636A256972F000468377 /* XCRemoteSwiftPackageReference "GFLiveScanner" */,
+			);
 			productRefGroup = 251C823C25585292009486DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -148,9 +150,7 @@
 			files = (
 				251C824325585292009486DF /* ViewController.swift in Sources */,
 				251C823F25585292009486DF /* AppDelegate.swift in Sources */,
-				251C8255255852C8009486DF /* OCRHelper.swift in Sources */,
-				25BD2523255D939B00AC42FC /* OCRViewController.swift in Sources */,
-				25BD2526255D9C6C00AC42FC /* ImageCaptureViewController.swift in Sources */,
+				256DAF842567BAF9002D87E3 /* ViewController10.swift in Sources */,
 				251C824125585292009486DF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,12 +301,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V4J7VM9P5;
 				INFOPLIST_FILE = OCRTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gfrigerio.com.OCRTest;
+				PRODUCT_BUNDLE_IDENTIFIER = it.epress.gfrigerio.com.OCRTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,12 +321,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5V4J7VM9P5;
 				INFOPLIST_FILE = OCRTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = gfrigerio.com.OCRTest;
+				PRODUCT_BUNDLE_IDENTIFIER = it.epress.gfrigerio.com.OCRTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -355,6 +355,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2574636A256972F000468377 /* XCRemoteSwiftPackageReference "GFLiveScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gualtierofrigerio/GFLiveScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2574636B256972F000468377 /* GFLiveScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2574636A256972F000468377 /* XCRemoteSwiftPackageReference "GFLiveScanner" */;
+			productName = GFLiveScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 251C823325585292009486DF /* Project object */;
 }
