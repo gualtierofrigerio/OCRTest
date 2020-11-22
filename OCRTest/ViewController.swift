@@ -44,8 +44,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction private func tapOnLiveScan(_ sender:Any) {
         let liveScanVC = GFLiveScannerViewController(withDelegate: self, options: nil)
-        self.present(liveScanVC, animated: true, completion: nil)
-        liveScanVC.startScanning(mode: .ocr)
+        self.present(liveScanVC, animated: true) {
+            liveScanVC.startScanning(mode: .ocr)
+            self.cancellable = liveScanVC.getCapturedStringsPublisher()?.sink(receiveValue: { strings in
+                print("captured strings = \(strings)")
+            })
+        }
     }
     
     @IBAction private func tapOnCamera(_ sender:Any) {
