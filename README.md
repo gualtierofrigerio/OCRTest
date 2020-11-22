@@ -1,4 +1,5 @@
 # OCRTest
 
-Test project to demostrate the Use Vision framework to perform OCR on images
-
+Examples for [GFLiveScanner](https://github.com/gualtierofrigerio/GFLiveScanner).
+This project imports GFLiveScanner via SPM.
+Barcode live scanning is available on iOS 10, the OCR functionnality requires 13
