@@ -32,6 +32,15 @@ class ViewController10: UIViewController {
             print("available only on iOS 13")
         }
     }
+    @IBAction func ocrVCTap(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "OCRViewController") as? OCRViewController {
+                present(vc, animated: true, completion: nil)
+            }
+        } else {
+            print("available only on iOS 13")
+        }
+    }
 }
 
 extension ViewController10:GFLiveScannerDelegate {
