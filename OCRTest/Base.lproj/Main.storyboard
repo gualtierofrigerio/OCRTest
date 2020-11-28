@@ -19,7 +19,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ND-R1-nwe">
                                 <rect key="frame" x="0.0" y="126" width="414" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Barcode"/>
                                 <connections>
                                     <action selector="barcodeTap:" destination="6kZ-oj-ADk" eventType="touchUpInside" id="sGj-yy-PtJ"/>
@@ -27,10 +27,18 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wka-pV-d21">
                                 <rect key="frame" x="0.0" y="211" width="414" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OCR (iOS 13)"/>
                                 <connections>
                                     <action selector="ocrTap:" destination="6kZ-oj-ADk" eventType="touchUpInside" id="t4c-1B-8Aj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COd-61-m1z">
+                                <rect key="frame" x="0.0" y="296" width="414" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OCR VC"/>
+                                <connections>
+                                    <action selector="ocrVCTap:" destination="6kZ-oj-ADk" eventType="touchUpInside" id="idd-CY-WUW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -52,7 +60,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpJ-YR-HVe">
                                 <rect key="frame" x="20" y="113" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Live Scan"/>
                                 <connections>
                                     <action selector="tapOnLiveScan:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pb0-dE-io7"/>
@@ -60,7 +68,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZNo-3m-QHU">
                                 <rect key="frame" x="20" y="151" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OCR from camera"/>
                                 <connections>
                                     <action selector="tapOnCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHF-U3-SxB"/>
@@ -68,7 +76,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-S6-sxN">
                                 <rect key="frame" x="20" y="189" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="OCR from library"/>
                                 <connections>
                                     <action selector="tapOnLibrary:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nqy-NH-efw"/>
@@ -83,8 +91,45 @@
             </objects>
             <point key="canvasLocation" x="92.753623188405811" y="57.589285714285708"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="RSm-d6-s12">
+            <objects>
+                <viewController storyboardIdentifier="OCRViewController" id="2ai-kp-vnX" customClass="OCRViewController" customModule="OCRTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nmr-5k-8Ql">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0S1-0N-ykR">
+                                <rect key="frame" x="20" y="44" width="374" height="434"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiQ-It-SDX">
+                                <rect key="frame" x="20" y="486" width="374" height="363"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tba-C0-6aC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="ocrContainerView" destination="0S1-0N-ykR" id="SDB-ds-4cm"/>
+                        <outlet property="ocrLabel" destination="NiQ-It-SDX" id="cLr-Hq-Ofr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Tz-b2-bj7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="51.5625"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
