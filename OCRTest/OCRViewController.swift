@@ -19,7 +19,6 @@ class OCRViewController: UIViewController {
         let liveScanVC = GFLiveScannerViewController(withDelegate: nil, options: nil)
         addChild(liveScanVC)
         self.ocrContainerView.addSubview(liveScanVC.view)
-        
         liveScanVC.startScanning(mode: .ocr)
         
         let publisher = liveScanVC.getCapturedStringsPublisher()
@@ -36,6 +35,7 @@ class OCRViewController: UIViewController {
 }
 
 /// This is the delegate implementation if you prefer it over the Combine publisher
+/// set this class to be the GFLiveScannerViewController delegate
 @available(iOS 13.0, *)
 extension OCRViewController:GFLiveScannerDelegate {
     func capturedStrings(strings: [String]) {

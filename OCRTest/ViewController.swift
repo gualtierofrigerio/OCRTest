@@ -9,6 +9,10 @@ import Combine
 import UIKit
 import GFLiveScanner
 
+/// Use this View controller to see the OCR on a static image
+/// This project includes 3 sample images in Assets
+/// and you can also use UIImagePicker to select an image from the library
+/// or take a picture with the camera
 @available(iOS 13.0, *)
 class ViewController: UIViewController, UINavigationControllerDelegate {
 
