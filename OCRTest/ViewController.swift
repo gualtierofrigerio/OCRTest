@@ -39,8 +39,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @available(iOS 13.0, *)
     func performOCR(onImage image:UIImage) {
         let helper = GFOcrHelper(fastRecognition: false)
-        helper.getTextFromImage(image) { success, strings in
-            print("success \(success) strings \(String(describing: strings))")
+        helper.getTextFromImage(image) { result in
+            switch result {
+            case .success(let strings):
+                print("strings: \(strings)")
+            case .failure(let error):
+                print("\(error)")
+            }
         }
     }
     
@@ -89,12 +94,12 @@ extension ViewController: UIImagePickerControllerDelegate {
             return
         }
         ocrHelper.useFastRecognition = false
-        ocrHelper.getTextFromImage(image) { success, strings in
-            if let strings = strings {
+        ocrHelper.getTextFromImage(image) { result in
+            switch result {
+            case .success(let strings):
                 print(strings)
-            }
-            else {
-                print("no strings recognized")
+            case .failure(let error):
+                print("no strings recognized \(error)")
             }
         }
     }
