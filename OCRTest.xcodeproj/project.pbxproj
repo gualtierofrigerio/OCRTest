@@ -16,6 +16,7 @@
 		256DAF842567BAF9002D87E3 /* ViewController10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DAF832567BAF9002D87E3 /* ViewController10.swift */; };
 		2574636C256972F000468377 /* GFLiveScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 2574636B256972F000468377 /* GFLiveScanner */; };
 		25A2D75E256EB41A009B41B6 /* OCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A2D75D256EB41A009B41B6 /* OCRViewController.swift */; };
+		25B9FEEC26307388006BF199 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B9FEEB26307388006BF199 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		251C824C25585293009486DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		256DAF832567BAF9002D87E3 /* ViewController10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController10.swift; sourceTree = "<group>"; };
 		25A2D75D256EB41A009B41B6 /* OCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRViewController.swift; sourceTree = "<group>"; };
+		25B9FEEB26307388006BF199 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				251C823E25585292009486DF /* AppDelegate.swift */,
 				251C824025585292009486DF /* SceneDelegate.swift */,
 				25A2D75D256EB41A009B41B6 /* OCRViewController.swift */,
+				25B9FEEB26307388006BF199 /* SwiftUIView.swift */,
 				251C824225585292009486DF /* ViewController.swift */,
 				256DAF832567BAF9002D87E3 /* ViewController10.swift */,
 				251C824425585292009486DF /* Main.storyboard */,
@@ -153,6 +156,7 @@
 			files = (
 				251C824325585292009486DF /* ViewController.swift in Sources */,
 				251C823F25585292009486DF /* AppDelegate.swift in Sources */,
+				25B9FEEC26307388006BF199 /* SwiftUIView.swift in Sources */,
 				256DAF842567BAF9002D87E3 /* ViewController10.swift in Sources */,
 				25A2D75E256EB41A009B41B6 /* OCRViewController.swift in Sources */,
 				251C824125585292009486DF /* SceneDelegate.swift in Sources */,
@@ -310,7 +314,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = it.epress.gfrigerio.com.OCRTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gfrigerio.com.OCRTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -330,7 +334,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = it.epress.gfrigerio.com.OCRTest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gfrigerio.com.OCRTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

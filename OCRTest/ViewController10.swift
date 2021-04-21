@@ -7,6 +7,7 @@
 
 import UIKit
 import GFLiveScanner
+import SwiftUI
 
 class ViewController10: UIViewController {
 
@@ -39,6 +40,16 @@ class ViewController10: UIViewController {
             }
         } else {
             print("available only on iOS 13")
+        }
+    }
+    
+    @IBAction func swiftUITap(_ sender:Any) {
+        if #available(iOS 13.0, *) {
+            let swiftUIView = SwiftUIView()
+            let hostingVC = UIHostingController(rootView: swiftUIView)
+            present(hostingVC, animated: true, completion: nil)
+        } else {
+            print("swiftUI not available")
         }
     }
 }
