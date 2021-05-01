@@ -16,14 +16,15 @@ struct SwiftUIView: View {
             Text("This is a SwiftUI View")
                 .padding()
             Button {
-                sourceType = .photoLibrary
-                showPicker = true
+                viewModel.sourceType = .photoLibrary
+                showPicker.toggle()
             } label: {
                 Text("OCR from library")
             }
             Button {
+                viewModel.sourceType = .camera
                 sourceType = .camera
-                showPicker = true
+                showPicker.toggle()
             } label: {
                 Text("OCR from camera")
             }
@@ -33,20 +34,19 @@ struct SwiftUIView: View {
             Spacer()
         }
         .sheet(isPresented: $showPicker) {
-            SwiftUIPicker(sourceType:sourceType, viewModel: viewModel)
+            SwiftUIPicker(sourceType:viewModel.sourceType, viewModel: viewModel)
         }
     }
     
     @State private var showPicker = false
     @State private var sourceType:UIImagePickerController.SourceType = .photoLibrary
-    
     @ObservedObject private var viewModel = SwiftUIViewModel()
 }
 
 @available(iOS 13.0, *)
 class SwiftUIViewModel: ObservableObject {
     @Published var recognizedText = ""
-    
+    @Published var sourceType:UIImagePickerController.SourceType = .photoLibrary
 }
 
 @available(iOS 13.0, *)
